@@ -3,7 +3,7 @@ const path = require('path');
 // PLUGINS
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
@@ -13,7 +13,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(), // clears dist folder after each build
     new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'client', 'index.html') }),
-    new MiniCssExtractPlugin({ filename: './src/styles/styles.css' }),
+    //new MiniCssExtractPlugin({ filename: './src/styles/styles.css' }),
   ],
   // Output
   output: {
@@ -35,18 +35,18 @@ module.exports = {
         },
       },
       // sass loader
-      {
-        test: /\.(sass|scss)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'sass-loader',
-          },
-        ],
-      },
+      // {
+      //   test: /\.(sass|scss)$/,
+      //   use: [
+      //     MiniCssExtractPlugin.loader,
+      //     {
+      //       loader: 'css-loader',
+      //     },
+      //     {
+      //       loader: 'sass-loader',
+      //     },
+      //   ],
+      // },
     ],
   },
   // Resolve extension issues

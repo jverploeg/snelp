@@ -3,17 +3,26 @@ import axios from 'axios';
 
 function App() {
   //INITIALIZE STATE
-  // const [stateName, setStateName] = useState({})
+  const [snowReports, setReports] = useState({})
 
+  //USE EFFECT to RENDER PAGE
+  useEffect(() => {
+    //axios & fetch
+    const fetchData = async () => {
+      const response = await axios(
+        `/reports`
+      );
+      setReports(response.data);
+    };
+    fetchData();
+  }, []);
 
-
+  console.log(snowReports);
   return (
-    <div className="main">
-      <div className="header">
-        <h1 className="title">SNELP</h1>
-      </div>
+    <div>
+      <h1>SNELP</h1>
     </div>
   );
-};
+}
 
 export default App;
