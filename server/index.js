@@ -26,16 +26,10 @@ app.listen(port, () => {
 
 //ROUTES and REQUESTS
 
-// app.get('/', (req, res) => {
-//   .then((results) => {
-//     res.status(200).send(results)
-//   })
-//   .catch((error) => {
-//     res.status(400).send(error)
-//   });
-// })
 app.get('/reports', (req, res) => {
-  const query = `SELECT * FROM snow where base is not null ORDER BY base DESC LIMIT 15`;
+  //const query = `SELECT * FROM snow2 where base is not null ORDER BY base DESC LIMIT 15`;
+  const query = `SELECT * FROM snow2 ORDER BY resort ASC`;
+  //TODO: algorithm this side or in the client...
   db.getReports(query)
   .then((results) => {
     console.log('server',results)

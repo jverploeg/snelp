@@ -6,7 +6,11 @@
   "scripts": {
     "server": "nodemon server/index.js",
     "build": "webpack",
-    "watch": "webpack -w"
+    "watch": "webpack -w",
+    "next-dev": "next -p 3001",
+    "next-build": "next build",
+    "next-start": "next start"
+
   },
   "repository": {
     "type": "git",
@@ -23,6 +27,7 @@
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "next": "^10.1.2",
     "pg": "^8.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
