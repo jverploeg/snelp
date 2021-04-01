@@ -42,18 +42,20 @@ export default function App() {
     let ranks = []
     ranks = snowReports.slice();
     ranks.map(item => {
-      item.new_snow = item.new_snow * (data.snow);
+      item.new_snow = item.new_snow * (10*data.snow);
       item.base = item.base * (data.base);
       item.area_open = item.area_open * (data.open);
-      item.total = item.new_snow + item.base + item.area_open + item.snow_score;
+      //item.Distance = (400 - item.Distance) * (data.Distance);
+      item.total = item.new_snow + item.base + item.area_open + item.snow_score+((400 - item.Distance) * (data.distance/10))  + ( (((item.true_snow/100)+(item.days_over6inches/2)+(item.months_over90)-(item.months_under30/10)))*(data.history/2));
     })
     console.log({ranks})
     ranks.sort((a,b) => b.total - a.total);
     console.log({ranks})
     ranks.map(item => {
-      item.new_snow = item.new_snow / (data.snow);
+      item.new_snow = item.new_snow / (data.snow) / 10;
       item.base = item.base / (data.base);
       item.area_open = item.area_open / (data.open);
+      //item.Distance = (400 - item.Distance) * (data.Distance);
     })
     ranks = ranks.slice(0,10);
     ranking = ranks.slice();
@@ -80,9 +82,9 @@ export default function App() {
         </div> */}
       </div>
       <div>
-        <Button>
+        {/* <Button>
          <Link to="/">Home</Link>
-        </Button>
+        </Button> */}
         <a>
         <Start
           //handleSelection={handleSelection}

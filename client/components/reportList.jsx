@@ -18,6 +18,7 @@ const ReportList = (props) => {
           <th>DAYS OVER 6"</th>
           <th>MONTHS OVER 90"(%)</th>
           <th>MONTHS UNDER 30"(%)</th>
+          <th>DISTANCE (Miles from DIA)</th>
           {/* <th>SNOW SCORE</th> */}
           {/* <th>BASE vs. AVERAGE SNOWFALL</th> */}
         </tr>
@@ -32,6 +33,7 @@ const ReportList = (props) => {
             <td>{item.days_over6inches}</td>
             <td>{item.months_over90}</td>
             <td>{item.months_under30}</td>
+            <td>{item.Distance}</td>
             {/* <td>{item.snow_score}</td> */}
             {/* <td>{item.BvA}</td> */}
           </tr>
