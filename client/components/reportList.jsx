@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 const ReportList = (props) => {
   //state/props
   const { reports } = props;
-  console.log({reports});
+  console.log({reports})
   //map the reports
   return (
     <div className="list">
