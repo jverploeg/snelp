@@ -4,7 +4,7 @@ CREATE TABLE snow (
  resort   varchar UNIQUE,
  new_snow integer,
  area_open integer,
- base      integer, -- not null,
+ base      integer,
  BvA       integer,
  PRIMARY KEY (id)
 );

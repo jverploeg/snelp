@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+model snow2 (
+ id     int GENERATED ALWAYS AS IDENTITY,
+ resort   varchar UNIQUE,
+ new_snow integer,
+ area_open integer,
+ base      integer,
+ BvA       integer,
+ true_snow double precision,
+ days_over6inches double precision,
+ months_over90      double precision, -- not null,
+ months_under30       double precision,
+ snow_score       double precision,
+ PRIMARY KEY (id)
+);

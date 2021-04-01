@@ -7,7 +7,7 @@ const axios = require('axios');
 //INITIALIZE
 const app = express();
 //SET PORT
-const port = 3000;
+const port = 3001;
 //CONNECT DB
 const db = require('./db.js');
 
